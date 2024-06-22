@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+
 body {
     margin: 0;
     display: flex;
-    font-family: sans-serif;
+    font-family: "Kalam", cursive;
     flex-direction: column;
     align-items: center;
     height: 100vh;
@@ -18,6 +21,7 @@ h2 {
     letter-spacing: 4px;
     font-size: 14px;
     text-align: center;
+    color: darkred;
 }
 
 .clock {
@@ -51,6 +55,16 @@ h2 {
     opacity: 0.8;
 }
 
+.clock .text_jp {
+    height: 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: black;
+    opacity: 0.8;
+    font-family: "Yuji Mai", serif;
+}
+
 .clock #ampm {
     position: absolute;
     bottom: 0;
@@ -58,4 +72,93 @@ h2 {
     height: 30px;
     font-size: 20px;
     background: #4B3621;
-} 
+}
+.clock #ampm_jp {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    background: #4B3621;
+    font-family: "Yuji Mai", serif;
+
+}
+
+.year {
+    font-size: 5em;
+    color:crimson;
+    text-shadow: 2px 2px 4px rgba(200, 15, 15, 0.3);
+}
+.year::after {
+    content: " 年";
+}
+
+.countdown {
+    margin: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 120px;
+    color:yellowgreen;
+    text-shadow: 2px 2px 4px rgba(200, 15, 15, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown div {
+    margin: 0 15px;
+    font-size: 2.5em;
+    font-weight: 500;
+    margin-top: -25px;
+    position: relative;
+    text-align: center;
+    width: 150px;
+}
+
+.countdown div::before {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    font-size: 0.35em;
+    line-height: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    width: 100%;
+    height: 35px;
+}
+
+.countdown #cd_day::before {
+    content: "Day(s)";
+}
+.countdown #cd_hour::before {
+    content: "Hour(s)";
+}
+.countdown #cd_minutes::before {
+    content: "Minutes(s)";
+}
+.countdown #cd_seconds::before {
+    content: "Seconds(s)";
+}
+
+.countdown #cd_day::after {
+    content: " 日";
+}
+.countdown #cd_hour::after {
+    content: " 時";
+}
+.countdown #cd_minutes::after {
+    content: " 分";
+}
+.countdown #cd_seconds::after {
+    content: " 秒";
+}
+
+.year::after, 
+.countdown #cd_day::after,
+.countdown #cd_hour::after,
+.countdown #cd_minutes::after,
+.countdown #cd_seconds::after {
+    font-family: "Yuji Mai", serif;
+}
