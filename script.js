@@ -9,6 +9,10 @@ const cdHourEl = document.getElementById("cd_hour")
 const cdMinuteEl = document.getElementById("cd_minutes")
 const cdSecondEl = document.getElementById("cd_seconds")
 
+const monthJp = document.getElementById("month")
+const dateJp = document.getElementById("date")
+const dayJp = document.getElementById("day")
+
 function updateClock() {
     let h = new Date().getHours()
     let m = new Date().getMinutes()
@@ -68,5 +72,29 @@ function updateCountDown() {
     
 }
 
+function writeDayJp() {
+    const dayJp = [
+        "(日曜日)", "(月曜日)", "(火曜日)", "(水曜日)", "(木曜日)", "(金曜日)", "(土曜日)"
+    ]
+    const nowDate = new Date().getDay()
+    return dayJp[nowDate]
+}
+
+function updateDate() {
+    const m = new Date().getMonth() + 1
+    const d = new Date().getDate()
+    const day = writeDayJp()
+
+    monthJp.innerText = String(m).padStart(2, '0')
+    dateJp.innerText = String(d).padStart(2, '0')
+    dayJp.innerText = day
+
+    const oneDayInMilliseconds = 24 * 60 * 60 * 1000;
+    setTimeout(() => {
+        updateDate();
+    }, oneDayInMilliseconds);
+}
+
 updateClock()
 updateCountDown()
+updateDate()

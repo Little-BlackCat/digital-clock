@@ -94,7 +94,7 @@ h2 {
 }
 
 .countdown {
-    margin: 30px;
+    margin: 0px 30px 30px 30px;
     background-color: rgba(0, 0, 0, 0.3);
     width: 100%;
     height: 120px;
@@ -160,5 +160,29 @@ h2 {
 .countdown #cd_hour::after,
 .countdown #cd_minutes::after,
 .countdown #cd_seconds::after {
+    font-family: "Yuji Mai", serif;
+}
+
+div.jp_day #month,
+div.jp_day #date,
+div.jp_day #day {
+    font-size: 3.5em;
+    color: firebrick;
+    text-shadow: 2px 2px 4px rgba(200, 15, 15, 0.3);
+}
+
+div.jp_day #month::after {
+    content: "月 ";
+}
+div.jp_day #date::after {
+    content: "日 ";
+}
+
+div.jp_day #month::after,
+div.jp_day #date::after,
+div.jp_day #day {
+    /* font-size: 3em; */
+    color: firebrick;
+    text-shadow: 2px 2px 4px rgba(200, 15, 15, 0.3);
     font-family: "Yuji Mai", serif;
 }
