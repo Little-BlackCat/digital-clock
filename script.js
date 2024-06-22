@@ -55,8 +55,7 @@ function updateCountDown() {
     const d = Math.floor(gap/day)
     const h = Math.floor((gap % day) / hour)
     const m = Math.floor((gap % hour) / minute)
-    const s = Math.floor((gap % minute) / second)
-    console.log((gap % day) / hour)
+    const s = Math.ceil((gap % minute) / second)
 
     cdDayEl.innerText = String(d).padStart(2, '0')
     cdHourEl.innerText = String(h).padStart(2, '0')
